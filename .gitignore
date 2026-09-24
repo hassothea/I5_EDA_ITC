@@ -1,0 +1,36 @@
+# Ignore Python cache and Jupyter checkpoints
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+
+# Ignore OS generated files
+.DS_Store
+
+
+# 1. Ignore everything by default
+*
+
+# 2. Whitelist the .gitignore file itself
+!/.gitignore
+
+# 3. Whitelist allowed root files and folders
+!/README.md
+!/index.html
+!/index_files/
+!/index_files/**
+!/img/
+!/img/**
+
+# 4. Whitelist docs folder and its contents
+!/docs/
+!/docs/**
+!/Labs/
+!/Labs/**
+
+# 5. Exclude index.html and index_files specifically inside docs
+/docs/index.html
+/docs/index_files/
+/.quarto/
+/_site/
+/Labs/Lab*/*-solution.ipynb
+**/*.quarto_ipynb

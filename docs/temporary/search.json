@@ -1,0 +1,205 @@
+[
+  {
+    "objectID": "slides/01-Intro-eda.html#about-the-course",
+    "href": "slides/01-Intro-eda.html#about-the-course",
+    "title": "I. Introduction to EDA & Descriptive Statistics",
+    "section": "0.1 About the course",
+    "text": "0.1 About the course\n\n🎯 Objective:\nEquip you with\n\nEssential EDA skills to handle, preprocess and uncover insights from data.\nKey Unsupervised Learning and Multivariate Analysis techniques to apply them to solve real-world problems with proper interpretation.\n\n\n📝 Grading Criteria\n\n\n\n\n\n\n\n\n\n\n\nCriteria\nAttendance\nQuiz\nMidterm\nFinal\nProject\n\n\n\n\nPercentage\n10%\n20%\n20%\n25%\n25%\n\n\n\n\n\n\n\n\n\n\n\n💻 Programming:  Python\n Jupyter Notebook,  Google colab,  Matplotlib,  Seaborn"
+  },
+  {
+    "objectID": "slides/01-Intro-eda.html#course-materials",
+    "href": "slides/01-Intro-eda.html#course-materials",
+    "title": "I. Introduction to EDA & Descriptive Statistics",
+    "section": "0.2 Course materials",
+    "text": "0.2 Course materials\n\n\nMoodle & Webpage: https://hassothea.github.io/EDA_ITC/"
+  },
+  {
+    "objectID": "slides/01-Intro-eda.html#introduction-1",
+    "href": "slides/01-Intro-eda.html#introduction-1",
+    "title": "I. Introduction to EDA & Descriptive Statistics",
+    "section": "1.1 Introduction",
+    "text": "1.1 Introduction\n\n\nIn 60s, someone said “Garbage in, garbage out (GIGO)!”.\n\n\n\n\n\n\n\n\nFig 1: GIGO: Garbage In, Garbage Out.\n\n\n\n\n\n\nThis means that low-quality input (data) \\to faulty output or result!\nExample: problems with real-world data:\n\nMissing values in the dataset (e.g., missing salary in a survey).\nOutliers that can skew the analysis (e.g., extremely high or low values in clinical data).\nInconsistent data entry (e.g., “Male”, “male”, “M”)."
+  },
+  {
+    "objectID": "slides/01-Intro-eda.html#statistics",
+    "href": "slides/01-Intro-eda.html#statistics",
+    "title": "I. Introduction to EDA & Descriptive Statistics",
+    "section": "1.2 Statistics",
+    "text": "1.2 Statistics\n\n\n\n\n\n\n\nFig 4: Descriptive vs Inferential Statistics."
+  },
+  {
+    "objectID": "slides/01-Intro-eda.html#motivation",
+    "href": "slides/01-Intro-eda.html#motivation",
+    "title": "I. Introduction to EDA & Descriptive Statistics",
+    "section": "2.1 Motivation",
+    "text": "2.1 Motivation\nConsider Titanic dataset\n\n\n\nCode\nimport pandas as pd                 # Import pandas package\nimport seaborn as sns               # Package for beautiful graphs\nimport matplotlib.pyplot as plt     # Graph management\ndata = pd.read_csv(path_titanic + \"/Titanic-Dataset.csv\" ) # Import it into Python\nsns.set(style=\"whitegrid\")          # Set grid background\ndata.drop(columns=['PassengerId']).head()\n\n\n\n\n\n\n\n\n\nSurvived\nPclass\nName\nSex\nAge\nSibSp\nParch\nTicket\nFare\nCabin\nEmbarked\n\n\n\n\n0\n0\n3\nBraund, Mr. Owen Harris\nmale\n22.0\n1\n0\nA/5 21171\n7.2500\nNaN\nS\n\n\n1\n1\n1\nCumings, Mrs. John Bradley (Florence Briggs Th...\nfemale\n38.0\n1\n0\nPC 17599\n71.2833\nC85\nC\n\n\n2\n1\n3\nHeikkinen, Miss. Laina\nfemale\n26.0\n0\n0\nSTON/O2. 3101282\n7.9250\nNaN\nS\n\n\n3\n1\n1\nFutrelle, Mrs. Jacques Heath (Lily May Peel)\nfemale\n35.0\n1\n0\n113803\n53.1000\nC123\nS\n\n\n4\n0\n3\nAllen, Mr. William Henry\nmale\n35.0\n0\n0\n373450\n8.0500\nNaN\nS\n\n\n\n\n\n\n\n\n\n\nFirst step in analyzing data is understanding each individual column.\n\nDid many people survive?\nWere there more female or male passengers?\nDoes the data contain any anomalies or problems?"
+  },
+  {
+    "objectID": "slides/01-Intro-eda.html#data-types",
+    "href": "slides/01-Intro-eda.html#data-types",
+    "title": "I. Introduction to EDA & Descriptive Statistics",
+    "section": "2.2 Data Types",
+    "text": "2.2 Data Types\nQuality vs Quantity\n\n\n\n\n\nCode\ndata[['Survived', 'Pclass', 'Age', 'Embarked']].head(3)    # Show 5 first rows\n\n\n\n\n\n\n\n\n\nSurvived\nPclass\nAge\nEmbarked\n\n\n\n\n0\n0\n3\n22.0\nS\n\n\n1\n1\n1\n38.0\nC\n\n\n2\n1\n3\n26.0\nS\n\n\n\n\n\n\n\n\n\n\nColumn Embarked is clearly different:\n\nPerforming “+, -…” doesn’t work!\nComparing its values doesn’t work either!\n\nEmbarked is a Qualitative or Categorical data.\n\n\n\n\n\nAge on the other hand is numerical:\n\nAge 50 is older than 30 (comparison is valid).\nAge 20 is 5 years younger than 25 or 25-20=5.\n\nAge is a Quantitative or Numerical data.\nHow about the other two columns 😎?"
+  },
+  {
+    "objectID": "slides/01-Intro-eda.html#qualitative-data",
+    "href": "slides/01-Intro-eda.html#qualitative-data",
+    "title": "I. Introduction to EDA & Descriptive Statistics",
+    "section": "2.3 Qualitative Data",
+    "text": "2.3 Qualitative Data\nStatistical values\n\n\n\n\ndata[['Pclass', 'Survived', 'Embarked', 'Sex']].head(3)\n\n\n\n\n\n\n\n\nPclass\nSurvived\nEmbarked\nSex\n\n\n\n\n0\n3\n0\nS\nmale\n\n\n1\n1\n1\nC\nfemale\n\n\n2\n3\n1\nS\nfemale\n\n\n\n\n\n\n\n\nWhat values should we use to describe qualitative data?\nAbsolute Frequency: Number of occurrences/counts of each category.\nRelative Frequency: proportion/percentage of each category.\nMode: Category with highest frequency/count.\n\n\n\n\n\nExample:\n\n\n\n\n\nCode\nfreq_tab = data[['Pclass']].value_counts().to_frame().round()\nfreq_tab['proportion'] = data[['Pclass']].value_counts(normalize=True).round(2)\nfreq_tab.T\n\n\n\n\n\n\n\n\nPclass\n3\n1\n2\n\n\n\n\ncount\n491.00\n216.00\n184.00\n\n\nproportion\n0.55\n0.24\n0.21\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nfreq_tab = data[['Sex']].value_counts().to_frame()\nfreq_tab['proportion'] = data[['Sex']].value_counts(normalize=True).round(2)\nfreq_tab.T\n\n\n\n\n\n\n\n\nSex\nmale\nfemale\n\n\n\n\ncount\n577.00\n314.00\n\n\nproportion\n0.65\n0.35"
+  },
+  {
+    "objectID": "slides/01-Intro-eda.html#quantitative-data",
+    "href": "slides/01-Intro-eda.html#quantitative-data",
+    "title": "I. Introduction to EDA & Descriptive Statistics",
+    "section": "2.4 Quantitative Data",
+    "text": "2.4 Quantitative Data\nStatistical values: Quantiles\n\n\n\n\n\ndata[['Age', 'Fare', 'SibSp', 'Parch']].head(3)\n\n\n\n\n\n\n\n\nAge\nFare\nSibSp\nParch\n\n\n\n\n0\n22.0\n7.2500\n1\n0\n\n\n1\n38.0\n71.2833\n1\n0\n\n\n2\n26.0\n7.9250\n0\n0\n\n\n\n\n\n\n\n\n\nWhat values should we use to describe quantitative data?\nQuantiles: For data sorted in ascending order, the cut points divide the range into contiguous proportion intervals.\n\n\nDifferent types of quantile:\n\n\nPercentiles: Values that divide data into 100 equal parts.\nQuartiles: The 25th (Q1), 50th (Q2 or median), and 75th (Q3) percentiles.\n\n\n\n\n\n\n\n\n\n\n\n\n\nmin\n25%\n50%\n75%\nmax\n\n\n\n\nFare\n0.00\n7.91\n14.45\n31.0\n512.33\n\n\nAge\n0.42\n20.12\n28.00\n38.0\n80.00"
+  },
+  {
+    "objectID": "slides/01-Intro-eda.html#more-on-descriptive-statistics",
+    "href": "slides/01-Intro-eda.html#more-on-descriptive-statistics",
+    "title": "I. Introduction to EDA & Descriptive Statistics",
+    "section": "2.5 More on Descriptive Statistics",
+    "text": "2.5 More on Descriptive Statistics\n\n\n📄 Review on descriptive statistics."
+  },
+  {
+    "objectID": "slides/01-Intro-eda.html#section",
+    "href": "slides/01-Intro-eda.html#section",
+    "title": "I. Introduction to EDA & Descriptive Statistics",
+    "section": "",
+    "text": "🥳 Yeahhhh….\n       \nParty time… 🥂"
+  },
+  {
+    "objectID": "slides/02-univariate.html#outline",
+    "href": "slides/02-univariate.html#outline",
+    "title": "1. Introduction to EDA & Descriptive Statistics",
+    "section": "1  Outline",
+    "text": "1  Outline\n\n\n\n\n0. Motivation \n1. Bivariate Visualization \n2. Multivariate Visualization \n3. Time series data \n4. Animated charts/graphs\n\n\n\n\n\n🌐 https://clauswilke.com/dataviz/"
+  },
+  {
+    "objectID": "slides/02-univariate.html#motivation-1",
+    "href": "slides/02-univariate.html#motivation-1",
+    "title": "II. Univariate Analysis",
+    "section": "1.1 Motivation",
+    "text": "1.1 Motivation\n Gapminder dataset (1704, 5)\n\n\nThis dataset captures the world’s evolution from 1952 to 2007.\nNow, take a look at the data from year 2007.\n\n\n\n\nCode\nfrom gapminder import gapminder\nimport numpy as np\ndata2007 = gapminder[gapminder.year == 2007]  # filter to year 2007\ndata2007.iloc[:5,:].drop(columns=['year']).style.hide()\n\n\n\n\n\n\n\ncountry\ncontinent\nlifeExp\npop\ngdpPercap\n\n\n\n\nAfghanistan\nAsia\n43.828000\n31889923\n974.580338\n\n\nAlbania\nEurope\n76.423000\n3600523\n5937.029526\n\n\nAlgeria\nAfrica\n72.301000\n33333216\n6223.367465\n\n\nAngola\nAfrica\n42.731000\n12420476\n4797.231267\n\n\nArgentina\nAmericas\n75.320000\n40301927\n12779.379640"
+  },
+  {
+    "objectID": "slides/02-univariate.html#motivation-2",
+    "href": "slides/02-univariate.html#motivation-2",
+    "title": "II. Univariate Analysis",
+    "section": "1.2 Motivation",
+    "text": "1.2 Motivation\n Gapminder dataset (1704, 5)\n\n\nThis dataset captures the world’s evolution from 1952 to 2007.\nNow, take a look at the data from year 2007 (summary).\n\n\n\nCode\nquan_vars = [\"pop\", \"lifeExp\", \"gdpPercap\"]\ndata2007[quan_vars].describe().transpose().drop(columns=[\"count\", \"25%\", \"75%\"]).transpose()\n\n\n\n\n\n\n\n\n\npop\nlifeExp\ngdpPercap\n\n\n\n\nmean\n4.402122e+07\n67.007423\n11680.071820\n\n\nstd\n1.476214e+08\n12.073021\n12859.937337\n\n\nmin\n1.995790e+05\n39.613000\n277.551859\n\n\n50%\n1.051753e+07\n71.935500\n6124.371108\n\n\nmax\n1.318683e+09\n82.603000\n49357.190170"
+  },
+  {
+    "objectID": "slides/02-univariate.html#motivation-3",
+    "href": "slides/02-univariate.html#motivation-3",
+    "title": "II. Univariate Analysis",
+    "section": "1.3 Motivation",
+    "text": "1.3 Motivation\n Gapminder dataset (1704, 5)\n\n\nThis dataset captures the world’s evolution from 1952 to 2007.\nNow, take a look at the data from year 2007 (visualization).\n\n\n\n\nCode\nfrom plotly.subplots import make_subplots\nimport plotly.graph_objects as go\nfig = make_subplots(rows=1, cols=3, \n              subplot_titles=(\"Boxplot of pop\", \"Violinplot of lifeExp\", \"Histogram of GDP Per Capita\"))\nfig.add_trace(go.Box(y=data2007['pop'], name=\"pop\"), col=1, row=1)\nfig.add_trace(go.Violin(y=data2007['lifeExp'], name=\"lifeExp\"), row=1, col=2)\nfig.add_trace(go.Histogram(x=data2007['gdpPercap'],\n              name=\"gdpPercap\"), row=1, col=3)\nfig.update_layout(height=280, width=1000)\nfig.update_yaxes(type=\"log\", row=1, col=1)\nfig.update_xaxes(title=\"Population\", row=1, col=1)\nfig.update_xaxes(title=\"Life Expectancy\", row=1, col=2)\nfig.update_xaxes(title=\"GDP Per Capita\", row=1, col=3)\nfig.show()\n\n\n                            \n                                            \n\n\n\n\n Hans Rosling’s 200 Countries, 200 Years in 4 Minutes."
+  },
+  {
+    "objectID": "slides/02-univariate.html#motivation-4",
+    "href": "slides/02-univariate.html#motivation-4",
+    "title": "II. Univariate Analysis",
+    "section": "1.4 Motivation",
+    "text": "1.4 Motivation\nObjective\n\n\n\n                            \n                                            \n\n\n\nThe main objectives of this chapter:\n\nWhat clues/indicators tell us how columns are related?\nWhat graphs can help us see that relationship?"
+  },
+  {
+    "objectID": "slides/02-univariate.html#quan.-vs-quan.",
+    "href": "slides/02-univariate.html#quan.-vs-quan.",
+    "title": "II. Univariate Analysis",
+    "section": "2.1 Quan. vs Quan.",
+    "text": "2.1 Quan. vs Quan.\nIndicator: Covariance\n\n\n\n\nSuppose X=[\\text{x}_1,\\text{x}_2,...,\\text{x}_n] be a quan. column.\nMean/average: \\overline{\\text{x}}=\\displaystyle\\frac{1}{n}\\sum_{i=1}\\text{x}_i.\nVariance: V(X)=\\displaystyle\\frac{1}{n-1}\\sum_{i=1}^n(\\text{x}_i-\\overline{x})^2.\nStandard deviation: s=\\sqrt{V(X)}.\nIf Y=[\\text{y}_1,\\text{y}_2,\\dots,\\text{y}_n] is an other quan. column, the covaraince between X and Y is defined by\n\n\\text{Cov}(X,Y)=\\frac{1}{n-1}\\sum_{i=1}(\\text{x}_i-\\overline{x})(\\text{y}_i-\\overline{y}).\n\n\n\nCode\nimport plotly.express as px\ndf = px.data.tips()\nfig = px.scatter(df, y=\"tip\", x=\"total_bill\", color=\"sex\", hover_data=df.columns)\nfig.update_layout(width=380, height=300, title=\"Tips vs total bill & gender\")\nfig.show()\n\n\n                            \n                                            \n\n\n\n\n\n\n\n\n\n\n\ntip\ntotal_bill\nsex\n\n\n\n\n0\n1.01\n16.99\nFemale\n\n\n1\n1.66\n10.34\nMale\n\n\n2\n3.50\n21.01\nMale"
+  },
+  {
+    "objectID": "slides/02-univariate.html#quan.-vs-quan.-1",
+    "href": "slides/02-univariate.html#quan.-vs-quan.-1",
+    "title": "II. Univariate Analysis",
+    "section": "2.2 Quan. vs Quan.",
+    "text": "2.2 Quan. vs Quan.\nIndicator: Covariance\n\n\n\n\nCovariance between quan. columns X and Y:\n\n\\text{Cov}(X,Y)=\\frac{1}{n-1}\\sum_{i=1}(\\text{x}_i-\\overline{x})(\\text{y}_i-\\overline{y}).\n\n\nIt determines tendency/direction of the relationship between the two variables.\n\nPositive value \\approx change in the same direction.\nNegative value \\approx change in opposite direction.\n\n\n\n It’s hard to interpret the value of covariance as it can be large or small according to the scale of X and Y.\n\n\n\n\n\nCode\nfig.update_layout(title=f\"Tips vs total bill (Cov = {float(np.cov(df['tip'].values, df['total_bill'].values).round(2)[0,1])}) & gender \")\nfig.show()\n\n\n                            \n                                            \n\n\n\n\n\n\n\n\n\n\n\ntip\ntotal_bill\nsex\n\n\n\n\n0\n1.01\n16.99\nFemale\n\n\n1\n1.66\n10.34\nMale\n\n\n2\n3.50\n21.01\nMale"
+  },
+  {
+    "objectID": "slides/02-univariate.html#quan.-vs-quan.-2",
+    "href": "slides/02-univariate.html#quan.-vs-quan.-2",
+    "title": "II. Univariate Analysis",
+    "section": "2.3 Quan. vs Quan.",
+    "text": "2.3 Quan. vs Quan.\nIndicator: Pearson Correlation Coefficient\n\n\n\n\n\n\n\n\nCorrelation between two quan. columns X and Y: r=r_{X,Y}=\\frac{\\sum_{i=1}^n(\\text{x}_{i}-\\overline{x})(\\text{y}_{i}-\\overline{y})}{\\sqrt{\\left(\\sum_{i=1}^n(x_{i1}-\\overline{x}_{1})^2\\right)\\left(\\sum_{i=1}^n(x_{i2}-\\overline{x}_{2})^2\\right)}}=\\frac{\\text{Cov}(X,Y)}{s_Xs_Y}.\nIt quantifies the linear relationship/tendency between the two variables.\n\nFor any pair X and Y one has -1\\leq r\\leq 1.\nIf r\\approx 1, then X and Y are positively correlated (change in the same direction).\nIf r\\approx -1, then X and Y are negatively correlated (change in opposite direction).\nIf r\\approx 0, then Y and Y are decorrelated (no pattern/trend/tendency).\n\nIt helps identifying informative/useful inputs for the building models.\nIt also helps identifying redundant (strongly correlated) inputs.\nFor tip example: \\text{Corr}(\\text{tip}, \\text{bill})= 0.676.\n Correlation does not imply causation; it only indicates a tendency, not a cause-and-effect link [👉 For more, read here]."
+  },
+  {
+    "objectID": "slides/02-univariate.html#quan.-vs-quan.-3",
+    "href": "slides/02-univariate.html#quan.-vs-quan.-3",
+    "title": "II. Univariate Analysis",
+    "section": "2.4 Quan. vs Quan.",
+    "text": "2.4 Quan. vs Quan.\nIndicator: Pearson Correlation Coefficient\n\n\nSource: https://en.wikipedia.org/wiki/Correlation."
+  },
+  {
+    "objectID": "slides/02-univariate.html#quan.-vs-quan.-4",
+    "href": "slides/02-univariate.html#quan.-vs-quan.-4",
+    "title": "II. Univariate Analysis",
+    "section": "2.5 Quan. vs Quan.",
+    "text": "2.5 Quan. vs Quan.\nIndicator: Pearson Correlation Matrix\n\nTo detect tendency of linear relationship between many quan. columns, Pearson correlation matrix is a common tool to use.\nConsider Pearson corr. matrix on Gapminder in 2007:\n\n\n\n\n\ncor = data2007[[\"gdpPercap\", \"lifeExp\", \"pop\"]].corr()\ncor.style.background_gradient(cmap='Accent')\n\n\n\n\n\n\n \ngdpPercap\nlifeExp\npop\n\n\n\n\ngdpPercap\n1.000000\n0.678662\n-0.055676\n\n\nlifeExp\n0.678662\n1.000000\n0.047553\n\n\npop\n-0.055676\n0.047553\n1.000000\n\n\n\n\n\n\n\n\n\nLifeExp and GDP appear to be positively related.\nPopulation appears to be decorrelated with the other two."
+  },
+  {
+    "objectID": "slides/02-univariate.html#quan.ordi-vs-quan.ordi",
+    "href": "slides/02-univariate.html#quan.ordi-vs-quan.ordi",
+    "title": "II. Univariate Analysis",
+    "section": "2.6 Quan./Ordi vs Quan./Ordi",
+    "text": "2.6 Quan./Ordi vs Quan./Ordi\nIndicator: Spearman’s Rank Correlation\n\n\nPearson correlation is sensitive to outliers (we will see that in the lab) and cannot capture non-linear relationship between quantitaive columns.\nIt is not sutiable for ordinal data (dislike-like rating, for example).\nSpearman’s Rank Correlation does not rely on the value of observations but rather depends on the ‘rank’ of the observations (works with ordinal).\nLet R[\\text{x}_i] and R[\\text{y}_i] be the rank of observations \\text{x}_i and \\text{y}_i in their own list, then Spearman’s rank correlation coefficient between X and Y is defined as the Pearson correlation over the rank of X and Y, i.e., \\rho_{X,Y}=r_{R[X],R[Y]}=\\frac{\\text{Cov}(R[X],R[Y])}{s_{R[X]},s_{R[Y]}}=1-\\frac{6\\sum_{i=1}^nd_i^2}{n(n^2-1)}, where d_i=R[\\text{x}_i]-R[\\text{y}_i] be the distance in rank of observation i-th."
+  },
+  {
+    "objectID": "slides/02-univariate.html#quan.ordi-vs-quan.ordi-1",
+    "href": "slides/02-univariate.html#quan.ordi-vs-quan.ordi-1",
+    "title": "II. Univariate Analysis",
+    "section": "2.7 Quan./Ordi vs Quan./Ordi",
+    "text": "2.7 Quan./Ordi vs Quan./Ordi\nIndicator: Spearman’s Rank Correlation\n\n\nExample: X=[3,2,1,5,8] and Y=[8,5,0,23,80]\n\n\n\n\nPearson\n\n\\overline{x}=\\frac{3+2+1+5+9}{5}=\\color{red}{4} and \\overline{y}=\\frac{8+5+0+23+80}{5}=\\color{blue}{23.2}.\ns_X=\\sqrt{\\frac{(3-\\color{red}{4})^2+(2-\\color{red}{4})^2+\\dots+(8-\\color{red}{4})^2}{n-1}}=2.8284 and s_Y=\\sqrt{\\frac{(8-\\color{blue}{23.2})^2+(5-\\color{blue}{23.2})^2+\\dots+(80-\\color{blue}{23.2})^2}{n-1}}=29.417.\nr_{X,Y}=\\frac{(3-\\color{red}{4})(8-\\color{blue}{23.2})+\\dots+(8-\\color{red}{4})(80-\\color{blue}{23.2})}{(2.8284)(29.417)}=0.9735.\n\n\n\nSpearman\n\nR[X]=[3,2,1,4,5] and R[Y]=[3,2,1,4,5].\nAll d_i=0 therefore \\rho_{X,Y}=1-\\frac{6\\sum_{i}d_i^2}{5(5^2-1)}=1."
+  },
+  {
+    "objectID": "slides/02-univariate.html#quan.ordi-vs-quan.ordi-2",
+    "href": "slides/02-univariate.html#quan.ordi-vs-quan.ordi-2",
+    "title": "II. Univariate Analysis",
+    "section": "2.8 Quan./Ordi vs Quan./Ordi",
+    "text": "2.8 Quan./Ordi vs Quan./Ordi\nIndicator: Spearman’s Rank Correlation\n\nPearson corr. on Gapminder in 2007:\n\n\n\ncor = data2007[[\"gdpPercap\", \"lifeExp\", \"pop\"]].corr()\ncor.style.background_gradient(cmap='Accent')\n\n\n\n\n\n\n \ngdpPercap\nlifeExp\npop\n\n\n\n\ngdpPercap\n1.000000\n0.678662\n-0.055676\n\n\nlifeExp\n0.678662\n1.000000\n0.047553\n\n\npop\n-0.055676\n0.047553\n1.000000\n\n\n\n\n\n\n\nSpearman corr. on Gapminder in 2007:\n\n\n\ncor = data2007[[\"gdpPercap\", \"lifeExp\", \"pop\"]]\\\n    .corr(\"spearman\")\ncor.style.background_gradient(cmap='Accent')\n\n\n\n\n\n\n \ngdpPercap\nlifeExp\npop\n\n\n\n\ngdpPercap\n1.000000\n0.856590\n-0.064588\n\n\nlifeExp\n0.856590\n1.000000\n0.003355\n\n\npop\n-0.064588\n0.003355\n1.000000"
+  },
+  {
+    "objectID": "slides/02-univariate.html#quan.ordi-vs-quan.ordi-3",
+    "href": "slides/02-univariate.html#quan.ordi-vs-quan.ordi-3",
+    "title": "II. Univariate Analysis",
+    "section": "2.9 Quan./Ordi vs Quan./Ordi",
+    "text": "2.9 Quan./Ordi vs Quan./Ordi\nIndicator: Spearman’s Rank Correlation\n\nConsider the change in both coefficients."
+  },
+  {
+    "objectID": "slides/02-univariate.html#quan.-vs-quan.-5",
+    "href": "slides/02-univariate.html#quan.-vs-quan.-5",
+    "title": "II. Univariate Analysis",
+    "section": "2.10 Quan. vs Quan.",
+    "text": "2.10 Quan. vs Quan.\nIndicator: Spearman (Summary)\n\n\n\n\n\n\n\n\n\nAspect\nPearson\nSpearman\n\n\n\n\nType\nParametric\nNon-parametric\n\n\nMeasure\nLinear relationship\nMonotonic relationship\n\n\nData Type\nContinuous\nOrdinal or continuous\n\n\nOutliers\nSensitive to outliers\nLess sensitive to outliers\n\n\nRange\n[-1,1]\n[-1,1]\n\n\nInterpretation\n\\approx 1: Perfect positive linear relationship\\approx -1: Perfect negative linear relationship\\approx 0: No linear relationship\n\\approx 1: Perfect positive rank correlation\\approx -1: Perfect negative rank correlation\\approx 0: No rank or no monotonicity correlation"
+  },
+  {
+    "objectID": "slides/02-univariate.html#quan.-vs-quan.-6",
+    "href": "slides/02-univariate.html#quan.-vs-quan.-6",
+    "title": "II. Univariate Analysis",
+    "section": "2.11 Quan. vs Quan.",
+    "text": "2.11 Quan. vs Quan.\nVisualization: Scatterplot\n\n\nScatterplot shows trends/relation of quantitative pairs.\nLet’s visualize relation: gdpPercap wih lifeExp & pop.\n\n\n\n\nCode\nimport plotly.graph_objects as go\nimport plotly.express as px\ndata2007 = gapminder.query(\"year == 2007\")\nfig1 = px.scatter(data2007, x=\"gdpPercap\", y=\"lifeExp\", hover_name=\"country\", opacity=0.7)\nfig1.update_traces(marker=dict(size=10))\nfig1.update_layout(height=350, width=500, title=\"The world GDP vs LifeExp in 2007\")\nfig1.show()\n\n\n                            \n                                            \n\n\n\n\n\n\n\nCode\ndata2007 = gapminder.query(\"year == 2007\")\nfig2 = px.scatter(data2007, x=\"gdpPercap\", y=\"pop\", hover_name=\"country\", opacity=0.7)\nfig2.update_traces(marker=dict(size=10))\nfig2.update_layout(height=350, width=500, title=\"The world GDP vs Population in 2007\")\nfig2.show()"
+  },
+  {
+    "objectID": "slides/02-univariate.html#quan.-vs-quan.-7",
+    "href": "slides/02-univariate.html#quan.-vs-quan.-7",
+    "title": "II. Univariate Analysis",
+    "section": "2.12 Quan. vs Quan.",
+    "text": "2.12 Quan. vs Quan.\nVisualization: Scatterplot\n\n\nScatterplot shows trends/relation of quantitative pairs.\nLet’s visualize relation: gdpPercap wih lifeExp & pop.\n\n\n\n\nCode\nfig1.update_layout(title=\"The world (log) GDP vs Population 2007 \")\nfig1.update_xaxes(type=\"log\")\nfig1.show()\n\n\n                            \n                                            \n\n\n\n\n\n\n\nCode\nfig2.update_layout(title=\"The world GDP vs (log) Population 2007 \")\nfig2.update_yaxes(type=\"log\")\nfig2.show()"
+  },
+  {
+    "objectID": "slides/02-univariate.html#quan.-vs-quan.-8",
+    "href": "slides/02-univariate.html#quan.-vs-quan.-8",
+    "title": "II. Univariate Analysis",
+    "section": "2.13 Quan. vs Quan.",
+    "text": "2.13 Quan. vs Quan.\nVisualization: Scatterplot\n\n\n\n\n\n                            \n                                            \n\n\n\n\n\n\n                            \n                                            \n\n\n\n\n\n\nGPD vs Life Expectancy:\n\nGeneral trend: Countries with high GPD tend to be healthier.\nThere are also a few countries with economy well above average yet health condition is still bad.\n\n\n\n\nGPD vs Population:\n\nGeneral trend: no clear trend!\nGDP per capita does not appear to be significantly influenced by a country’s population size."
+  },
+  {
+    "objectID": "slides/02-univariate.html#quan.-vs-quan.-9",
+    "href": "slides/02-univariate.html#quan.-vs-quan.-9",
+    "title": "II. Univariate Analysis",
+    "section": "2.14 Quan. vs Quan.",
+    "text": "2.14 Quan. vs Quan.\nVisualization: Scatterplot\n\n\n\n\n\n                            \n                                            \n\n\n\n\n                            \n                                            \n\n\n\n\nA proper visualization should\n\n\n🎯 Have a clear purpose – deliver the main message effectively.\n👥 Fit the audience – match their knowledge and needs.\n📊 Use the right chart – accurately represent the data.\n🎨 Be clean and consistent – simple design, meaningful colors, clear labels & title…\n🧠 Ensure clarity and honesty – no distortion or clutter.\n⚙️ Allow interaction (if needed) – make exploration easy.\n♿ Be accessible – readable for everyone, including color-blind users."
+  }
+]
