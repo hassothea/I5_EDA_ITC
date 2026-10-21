@@ -54,7 +54,7 @@ technical and general audiences.
 
 # 📋 Course session
 
-> **Visit the webpage:** [EDA &amp; Unsupervised Learning](https://hassothea.github.io/I5_EDA_ITC/).
+> **Visit the webpage:** [EDA &amp; Unsupervised Learning](https://hassothea.github.io/M1_DAS_EDA_ITC/).
 
 <!--](https://hassothea.github.io/EDA_ITC/TPs/TP3_Data_Preprocessing.html){target="_blank"} | [TP3-solution](https://hassothea.github.io/EDA_ITC/Solutions/TP3_Data_Preprocessing_sol.html){target="_blank"} | ✅ Completed | -->
 
