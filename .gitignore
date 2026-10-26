@@ -25,6 +25,7 @@
 # Other folders
 !/TPs/
 !/TPs/**
+/TPs/*sol.ipynb
 
 # Quarto
 /.quarto/
