@@ -35,36 +35,75 @@ technical and general audiences.
 
 # 📝 Course Criteria
 
-| **`Criteria`**       | **`Percentage`** |
-| :--------------------------- | :----------------------: |
-| Attendance                   |           10%           |
-| Participation & quiz         |           30%           |
-| Midterm Exam or/and Project  |         15%+15%         |
-| Final Project & Presentation |           30%           |
+
+| **`Criteria`**               | **`Percentage`** |
+| :--------------------------- | :---------------:|
+| Attendance                   |       10%       |
+| Participation & quiz         |       30%       |
+| Midterm Exam or/and Project  |     15%+15%     |
+| Final Project & Presentation |       30%       |
 
 ## ⌨️ Programming:
 
 > You are free you use your favorite programming language
->  `Python` or
-> …
+> <a href="https://www.python.org/" target="_blank"><img
+> src="./img/python.png" style="position: relative; bottom: 0px"
+> width="30" /></a> `Python` or
+> <a href="https://www.r-project.org/" target="_blank"><img
+> src="./img/R_logo.png" style="position: relative; bottom: 0px"
+> width="30" /></a>…
 
 <div class="panel-tabset">
 
----
+## `Python`
+
+- <a href="https://docs.jupyter.org/en/latest/" target="_blank"><img
+  src="./img/jupyter.png" style="position: relative; bottom: 0px"
+  width="30" /> Jupyter Notebook</a>
+- <a href="https://colab.research.google.com/" target="_blank"><img
+  src="./img/colab.png" style="position: relative; bottom: 0px"
+  width="30" /> Google colab</a>
+- <a href="https://matplotlib.org/" target="_blank"><img
+  src="./img/plt_logo.png" style="position: relative; bottom: 0px"
+  width="35" /> Matplotlib</a>
+- <a href="https://seaborn.pydata.org/" target="_blank"><img
+  src="./img/sns_logo.svg" style="position: relative; bottom: 0px"
+  width="30" /> Seaborn</a>
+
+## `R`
+
+- <a href="https://quarto.org/" target="_blank"><img
+  src="./img/quarto_logo.png" style="position: relative; bottom: 0px"
+  width="60" /> Rmarkdown/Quarto</a>
+- <a href="https://ggplot2.tidyverse.org/" target="_blank"><img
+  src="./img/posit_logo.png" style="position: relative; bottom: 0px"
+  width="25" /> Posit cloud</a>
+- <a href="https://ggplot2.tidyverse.org/" target="_blank"><img
+  src="./img/ggplot_logo.png" style="position: relative; bottom: 0px"
+  width="27" /> Ggplot2</a>
+- <a href="https://www.tidyverse.org/" target="_blank"><img
+  src="./img/tidyverse_logo.png" style="position: relative; bottom: 0px"
+  width="30" /> Tidyverse</a>
+
+</div>
+
+------------------------------------------------------------------------
 
 # 📋 Course session
 
-> **Visit the webpage:** [EDA &amp; Unsupervised Learning](https://hassothea.github.io/M1_DAS_EDA_ITC/).
+> **Visit the webpage:** [EDA & Unsupervised Learning](https://hassothea.github.io/I5_EDA_ITC/).
 
-<!--](https://hassothea.github.io/EDA_ITC/TPs/TP3_Data_Preprocessing.html){target="_blank"} | [TP3-solution](https://hassothea.github.io/EDA_ITC/Solutions/TP3_Data_Preprocessing_sol.html){target="_blank"} | ✅ Completed | -->
 
 # 📋 Midterms, Exams and Projects
+
 
 In this section, you will find all the information related to the
 midterms, exams and projects including instructions, starting dates and
 the deadlines.
 
+
 ## ✏️ Project:
+
 
 - ⏱️ Deadline for the report: `...Loading`.
 - ✉️ Where to submit: `...Loading`
@@ -115,7 +154,7 @@ the deadlines.
 - **Presentation**:
   - A possible dates: `...Loading`.
 
----
+------------------------------------------------------------------------
 
 # 📚 Resources and Further Reading
 
@@ -125,14 +164,21 @@ papers, and online courses, to further your understanding of
 
 👉 You will find these books/links helpful…
 
-- <a href="https://github.com/PacktPublishing/Exploratory-Data-Analysis-with-Python-Cookbook?tab=readme-ov-file" target="_blank">Exploratory-Data-Analysis-with-Python-Cookbook</a>
+- <a
+  href="https://github.com/PacktPublishing/Exploratory-Data-Analysis-with-Python-Cookbook?tab=readme-ov-file"
+  target="_blank">Exploratory-Data-Analysis-with-Python-Cookbook</a>
 
-- <a href="https://haralick.org/DV/Handbook_of_Data_Visualization.pdf" target="_blank">Handbook of Data Visualization, Chen et al.</a>
+- <a href="https://haralick.org/DV/Handbook_of_Data_Visualization.pdf"
+  target="_blank">Handbook of Data Visualization, Chen et al.</a>
 
-- <a href="https://wesmckinney.com/book/" target="_blank">Python for Data Analysis, Wes M.</a>
+- <a href="https://wesmckinney.com/book/" target="_blank">Python for Data
+  Analysis, Wes M.</a>
 
-- <a href="https://bookdown.org/rdpeng/exdata/" target="_blank">Exploratory Data Analysis with R, Roger D. Peng</a>
+- <a href="https://bookdown.org/rdpeng/exdata/"
+  target="_blank">Exploratory Data Analysis with R, Roger D. Peng</a>
 
-- <a href="https://batrachos.com/sites/default/files/pictures/Books/Wickham_Grolemund_2017_R%20for%20Data%20Science.pdf" target="_blank">R for Data Science, Hadley W. and Garrett G.</a>
+- <a
+  href="https://batrachos.com/sites/default/files/pictures/Books/Wickham_Grolemund_2017_R%20for%20Data%20Science.pdf"
+  target="_blank">R for Data Science, Hadley W. and Garrett G.</a>
 
----
+------------------------------------------------------------------------
